@@ -1,11 +1,60 @@
-body{
-    width: 850px;
-    margin: auto;
-    background: #fff;
-    font-size: 16px;
-    font-family: Times...
+body {
+width: 850px;
+margin: auto;
+background: #fff; /* 4b5320; */
+font-size: 16px;
+font-family: "Times New Roman", Georgia, Serif;
 }
 
-h3{
-    
+h3 {
+    font-size: 1.75em;
+}
+header {
+    border-bottom: 1px solid #dedede;
+}
+header p {
+    font-size: 1.25em;
+    font-style: italic;
+}
+footer p {
+    font-size: 0.8em;
+}
+
+
+h5 {
+    font-size: 1.25em;
+    margin: 10px 0 10px 0;
+}
+
+main {
+    overflow: auto;
+    padding: 15px 0 15px 0;
+}
+
+footer {
+    margin-top: 5px;
+    border-top: 1px solid #dedede;
+}
+
+
+.note-output p {
+    border: 1px solid #fff;
+}
+
+.note-output p:nth-child(even) {
+    background-color: #ccc;
+}
+.note-output p:nth-child(odd) {
+    background-color: #eee;
+}
+
+.note-controls {
+    margin: 10px 0 10px 0;
+    padding: 2px;
+    border-bottom: 1px
+}
+
+.note-output p:hover {
+    border: 1px solid #1a3852;
+    background-color: #fdd;
 }
