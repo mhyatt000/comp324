@@ -1,60 +1,60 @@
 Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/finance-charts-apple.csv', function(err, rows){
-    function unpack(rows, key){
-        return rows.map(function(row) {return row[key];});
-    }
 
-    var trace1 = {
-        type: "scatter",
-        mode: "lines",
-        name: "AAPL High",
-        x: unpack(rows, 'Date'),
-        y: unpack(rows, 'AAPL.High'),
-        line: {color: '#17BECF'}
+function unpack(rows, key) {
+  return rows.map(function(row) {
+    return row[key];
+  });
+}
 
-    }
+var trace = {
+  x: unpack(rows, 'Date'),
+  close: unpack(rows, 'AAPL.Close'),
+  high: unpack(rows, 'AAPL.High'),
+  low: unpack(rows, 'AAPL.Low'),
+  open: unpack(rows, 'AAPL.Open'),
 
-    var trace2 = {
-        type: "scatter",
-        mode: "lines",
-        name: "AAPL Low",
-        x: unpack(rows, 'Date'),
-        y: unpack(rows, 'AAPL.Low'),
-        line: {color: '#7F7F7F'}
+  // cutomise colors
+  increasing: {line: {color: 'blue'}},
+  decreasing: {line: {color: 'orange'}},
 
-    }
-
-    var data = [trace1, trace2];
-
-    var layout = {
-        title: 'AAPL Price Time Series',
-        xaxis: {
-            autorange: true,
-            range: ['2015-02-17', '2018-02-17'],
-            rangeselector: {
-                buttons: [
-                    {
-                        count: 1,
-                        label: '1m',
-                        step: 'month',
-                        stepmode: 'backward'
-                    },
-                    {
-                    count: 6,
-                    label: '6m',
-                    stepmode: 'backward'
-                },
-                {step: 'all'}
-                    
-                ]
-        },
-        rangeslider: {range: ['2015-02-17', '2018-02-17']},
-        type: 'date'
-    },
-    yaxis: {
-        autorange: true,
-        range: [86.8700008333, 138.870004167],
-        type: 'linear'
-    }
+  type: 'candlestick',
+  xaxis: 'x',
+  yaxis: 'y'
 };
-    Plotly.newPlot('myDiv', data, layout, {showSendToCloud: true});
-})
+
+var data = [trace];
+
+var layout = {
+  dragmode: 'zoom',
+  showlegend: false,
+  xaxis: {
+    autorange: true,
+    title: 'Date',
+	 rangeselector: {
+        x: 0,
+        y: 1.2,
+        xanchor: 'left',
+        font: {size:8},
+        buttons: [{
+            step: 'month',
+            stepmode: 'backward',
+            count: 1,
+            label: '1 month'
+        }, {
+            step: 'month',
+            stepmode: 'backward',
+            count: 6,
+            label: '6 months'
+        }, {
+            step: 'all',
+            label: 'All dates'
+        }]
+      }
+  },
+  yaxis: {
+    autorange: true,
+  }
+};
+
+Plotly.newPlot('myDiv', data, layout);
+});
