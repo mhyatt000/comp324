@@ -1,64 +1,38 @@
-<!-- single page app -->
-<!-- <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="main.js"></script>
-  </head>
-  
-  <body>
-    <div id="myDiv" style="width: 1750px; height: 1000px;"></div>
-  </body> -->
-
-<!-- TradingView Widget BEGIN -->
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>AJAX and JSON - week 10 - test 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="information on travel destinations">
+    <meta name="author" content="ancientlives">
+    <link rel="stylesheet" href="style.css">
 
-<div class="tradingview-widget-container">
-  <div id="technical-analysis-chart-demo"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "container_id": "technical-analysis-chart-demo",
-  "width": "100%",
-  "height": "100%",
-  "autosize": true,
-  "symbol": "AAPL",
-  "interval": "D",
-  "timezone": "exchange",
-  "theme": "dark",
-  "style": "1",
-  "toolbar_bg": "#f1f3f6",
-  "withdateranges": true,
-  "hide_side_toolbar": false,
-  "allow_symbol_change": true,
-  "save_image": false,
-  "studies": [
-    "ROC@tv-basicstudies",
-    "StochasticRSI@tv-basicstudies",
-    "MASimple@tv-basicstudies"
-  ],
-  "show_popup_button": true,
-  "popup_width": "1000",
-  "popup_height": "650",
-  "locale": "en"
-}
-  );
-  </script>
-  
-</div>
-<body>
-</body>
+  </head>
+  <body>
+    <!-- document header -->
+    <header>
+            <div>
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="News.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+    </header>
+    <!-- document main -->
+    <main>
+      <!-- note output -->
+      <section class="note-output">
+      </section>
+    </main>
+    <!-- document footer -->
+    <footer>
+          <p>app's copyright information, additional links...</p>
+    </footer>
+    <!-- js scripts... -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="assets/scripts/ajax_json.js"></script>
+  </body>
 </html>
-
-  <!-- TradingView Widget END -->
