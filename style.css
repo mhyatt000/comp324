@@ -82,22 +82,23 @@ div a:hover {
 
 /* end borrow */
 
-.grid-container {
-    display: grid;
-    grid-gap: 2px;
-    grid-template-rows: repeat(4, 100px);
-    grid-template-columns: 10% repeat(3, 1fr) 10%;
-
-}
 
 .grid-header {
     display: grid;
-    grid-area: 1 1 2 7;
-    grid-gap: 5px;
+    grid-gap: 5px 5px;
 
     grid-template-rows: 1;
     grid-template-columns: 10% repeat(4, 1fr) 10%;
 }
+
+.grid-container {
+    .grid-header;
+
+    grid-template-rows: auto;
+    grid-template-columns: 10% repeat(4, 1fr) 10%;
+
+}
+
 
 .grid-buffer-a {
     grid-column-start: 1;
@@ -109,9 +110,10 @@ div a:hover {
     grid-column-start: 6;
     grid-column-end: 7;
 }
+.grid-item {}
+
 .grid-nav {
     grid-area: 2 1 6 2;
-
 }
 
 .blue {
@@ -122,5 +124,8 @@ div a:hover {
     background: grey;
 }
 .white {
-    background: white
+    background: white;
+}
+.black {
+    background: black;
 }
