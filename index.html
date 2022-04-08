@@ -12,24 +12,42 @@
   <body>
     <!-- document header -->
 
-    <nav class='grid-header blue'>
+    <nav class='grid-header black'>
 
-        <div class='grid-buffer-a '><a>aaaaa</a></div>
+        <div class='grid-buffer-a'></div>
 
-        <li class='grid-item'><a href="Home.html">Home</a></li>
-        <li class='grid-item'><a href="News.html">News</a></li>
-        <li class='grid-item'><a href="contact.html">Contact</a></li>
-        <li class='grid-item'><a href="about.html">About</a></li>
+        <div class='grid-item grey'><a href="Home.html">Home</a></div>
+        <div class='grid-item grey'><a href="News.html">News</a></div>
+        <div class='grid-item grey'><a href="contact.html">Contact</a></div>
+        <div class='grid-item grey'><a href="about.html">About</a></div>
 
-        <div class='grid-buffer-b'/>
+        <div class='grid-buffer-b'></div>
 
     </nav>
 
-
     <!-- document main -->
-    <main>
+    <main class="grid-container">
+      <div class='grid-buffer-a'></div>
 
+      <div class="tradingview-widget-container grid-item">
+        <div id="tradingview_6ec2e"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script src="aapl.js"></script>
+      </div>
 
+      <div class="tradingview-widget-container grid-item">
+        <div id="tradingview_6ec2e"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script src="aapl.js"></script>
+      </div>
+
+      <div class="tradingview-widget-container grid-item">
+        <div id="tradingview_6ec2e"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+        <script src="aapl.js"></script>
+      </div>
+
+      <div class='grid-buffer-b'></div>
     </main>
 
     <!-- document footer -->
