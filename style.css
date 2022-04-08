@@ -106,7 +106,10 @@ div a:hover {
 }
 
 .grid-container {
-    grid-template-rows: auto;
+    display: grid;
+    grid-gap: 5px 5px;
+
+    grid-template-rows: 5;
     grid-template-columns: 10% repeat(4, 1fr) 10%;
 }
 
@@ -147,5 +150,3 @@ div a:hover {
 .black {
     background: black
 }
-
-
