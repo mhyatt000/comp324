@@ -62,19 +62,6 @@ footer {
 /* borrowed from W3 schools ... */
 /* https://www.w3schools.com/css/css_navbar_horizontal.asp */
 
-/* ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-
-    position: fixed;
-    top: 0;
-    width: 100%;
-
-}
- */
 div {
   float: left;
   border-right : 1px solid #bbb;
@@ -106,6 +93,7 @@ div a:hover {
 .grid-header {
     display: grid;
     grid-area: 1 1 2 7;
+    grid-gap: 5px;
 
     grid-template-rows: 1;
     grid-template-columns: 10% repeat(4, 1fr) 10%;
