@@ -117,13 +117,20 @@ div a:hover {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
+    grid-row-end: 10;
 }
 
 .grid-buffer-b {
     grid-column-start: 6;
     grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 10;
 }
-.grid-item {}
+
+.grid-item {
+    /* grid-column-start: 1;
+    grid-column-end: span col4-start; */
+}
 
 .grid-nav {
     grid-area: 2 1 6 2;
