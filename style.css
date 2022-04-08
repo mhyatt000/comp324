@@ -75,13 +75,13 @@ footer {
 
 }
  */
-li {
+div {
   float: left;
   border-right : 1px solid #bbb;
 
 }
 
-li a {
+div a {
   display: block;
   color: white;
   text-align: center;
@@ -89,7 +89,7 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
+div a:hover {
   background-color: #111;
 }
 
