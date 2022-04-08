@@ -1,5 +1,5 @@
 body {
-width: 850px;
+width: 100%;
 margin: auto;
 background: #fff; /* 4b5320; */
 font-size: 16px;
@@ -63,15 +63,22 @@ footer {
 /* https://www.w3schools.com/css/css_navbar_horizontal.asp */
 
 ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+
 }
 
 li {
   float: left;
+  border-right : 1px solid #bbb;
+
 }
 
 li a {
@@ -85,4 +92,23 @@ li a {
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: #111;
+}
+
+/* end borrow */
+
+.grid-container {
+    display: grid
+    grid-template-rows: repeat(4, 100px);
+    grid-template-columns: 10% repeat(3, 1fr) 10%;
+
+}
+
+.grid-buffer-a {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.grid-buffer-b {
+    grid-column-start: 6;
+    grid-column-end: 7;
 }
