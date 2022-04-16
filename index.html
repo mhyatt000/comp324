@@ -9,81 +9,30 @@
         <link rel="stylesheet" href="style.css">
 
     </head>
-  <body>
-    <!-- document header -->
 
-    <nav class='grid-header black'>
-
-        <div class='grid-buffer-a'></div>
-        <div class='grid-buffer-b'></div>
-
-
-        <div class='grid-item grey'><a href="Home.html">Home</a></div>
-        <div class='grid-item grey'><a href="News.html">News</a></div>
-        <div class='grid-item grey'><a href="contact.html">Contact</a></div>
-        <div class='grid-item grey'><a href="about.html">About</a></div>
-
-
-
+   <div class = "container">
+    <nav>
+      <div class="heading">
+        <h4>The Web Fund</h4>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="graph.html">Graphs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
     </nav>
-
-    <!-- document main -->
-    <main class="grid-container">
-        <div class='grid-buffer-a'></div>
-
-        <div class="tradingview-widget-container grid-item">
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script src="./Tickers JS/aapl.js"></script>
-        </div>
-
-        <div class="tradingview-widget-container grid-item">
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script src="./Tickers JS/googl.js"></script>
-        </div>
-
-        <div class="tradingview-widget-container grid-item">
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script src="./Tickers JS/gs.js"></script>
-        </div>
-
-        <div class="tradingview-widget-container grid-item">
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script src="./Tickers JS/msft.js"></script>
-        </div>
-
-        <div class="tradingview-widget-container grid-item">
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script src="./Tickers JS/nvda.js"></script>
-        </div>
-
-        <div class="tradingview-widget-container grid-item">
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script src="./Tickers JS/spx.js"></script>
-        </div>
-
-        <div class="tradingview-widget-container grid-item">
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script src="./Tickers JS/tsla.js"></script>
-        </div>
-
-        <div class="tradingview-widget-container grid-item">
-          <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-          <script src="./Tickers JS/twtr.js"></script>
-        </div>
-
-        <div class='grid-buffer-b'></div>
-
-
-
-    </main>
-
-    <!-- document footer -->
-    <footer>
-          <p>By: Matt Hyatt and Anthony Peters</p>
-    </footer>
-
-    <!-- js scripts... -->
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="assets/scripts/ajax_json.js"></script> -->
-</body>
+    <main>Welcome to our current holdings. Below you will see our two largest holdings. Please reference the Graphs page for the rest of our holdings.</main> 
+    <div id="sidebar-left"></div>
+    <div id="sidebar-right"></div>
+    <div id="graph1"> 
+      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+      <script src="./Tickers JS/aapl.js"></script>
+    </div>
+    <div id="graph2">
+      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+      <script src="./Tickers JS/msft.js"></script>
+    </div>
+    <footer>By: Anthony Peters and Matt Hyatt</footer>
+  </div>
 </html>
