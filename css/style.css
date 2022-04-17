@@ -7,7 +7,7 @@
     display:grid;
     height:98vh; # keeps annoying scroll bar out of the way
     grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
-    grid-template-rows: 0.2fr 0.1fr 1.5fr 0.1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.5fr 0.1fr;
     grid-template-areas:
         "sidebar-left nav nav sidebar-right"
         "sidebar-left main main sidebar-right"
@@ -25,10 +25,10 @@ main{
     display: grid;
     grid-area: main;
     grid-template-columns:  1fr 1fr ;
-    grid-template-rows:  0.1fr 1.5fr;
+    grid-template-rows:  .15fr 1.5fr;
 
     grid-template-areas:
-        "title title"
+        "desc desc"
         "content-left content-right";
 
     grid-gap:0.2rem;
@@ -79,10 +79,10 @@ nav{
     font-size: 20px;
 }
 
-.title{
+.desc{
     background: lightgrey;
     color: black;
-    grid-area: title;
+    grid-area: desc;
     text-align: center;
     font-size: 15px;
     border-radius:var(--root-radius);
@@ -150,6 +150,10 @@ nav{
 
 }
 
+p {
+    font-size : 10px;
+}
+
 footer {
     background: lightgrey;
     text-align: center;
@@ -166,7 +170,7 @@ footer {
         grid-template-areas:
         "nav"
         "sidebar-left"
-        "title"
+        "desc"
         "graph1"
         "graph2"
         "sidebar-right"

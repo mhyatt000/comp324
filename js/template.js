@@ -12,14 +12,11 @@ function make_red(anchor) {
     const page = get_page()
     const re = RegExp('>.*<')
     const linktext = String(anchor).match(re)[0].slice(1,-1).toLowerCase()
-    console.log(linktext,page)
     if (page === linktext || (page === 'index' && linktext === 'home')) {
-        console.log(true)
-        const out = '<a style="color:red"' + anchor.slice(2,-1)
+        const out = '<a style="color:red"' + anchor.slice(2,-1) + '>'
         console.log(out)
         return out
     }
-    console.log(typeof page)
     return anchor
 }
 
@@ -29,20 +26,17 @@ function build_navbar(){
 
     template.innerHTML = `
             <div class="heading">
-                <h4>The Web Fund</h4>
+                <h2>The Web Fund</h2>
             </div>
             <ul class="nav-links">
                 <li>${make_red('<a href="index.html">Home</a>')}</li>
                 <li>${make_red('<a href="about.html">About</a>')}</li>
                 <li>${make_red('<a href="graph.html">Graph</a>')}</li>
                 <li>${make_red('<a href="contact.html">Contact</a>')}</li>
+                <li>${make_red('<a href="news.html">News</a>')}</li>
             </ul>
     `
     navbar.appendChild(template.content)
-
-    for (li in navbar.children[1].children) {
-        console.log(li.innerHTML);
-    }
 
 }
 
