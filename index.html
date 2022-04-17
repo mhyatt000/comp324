@@ -6,33 +6,37 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Stock Analysis Website">
         <meta name="author" content="Matt Hyatt, Anthony Peters">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
 
+        <script defer src="js/template.js" onload="main()"></script>
+        <script type="text/javascript" src="js/ticker.js"></script>
     </head>
 
-   <div class = "container">
-    <nav>
-      <div class="heading">
-        <h4>The Web Fund</h4>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="graph.html">Graphs</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <main>Welcome to our current holdings. Below you will see our two largest holdings. Please reference the Graphs page for the rest of our holdings.</main> 
-    <div id="sidebar-left"></div>
-    <div id="sidebar-right"></div>
-    <div id="graph1"> 
-      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-      <script src="./Tickers JS/aapl.js"></script>
-    </div>
-    <div id="graph2">
-      <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-      <script src="./Tickers JS/msft.js"></script>
-    </div>
-    <footer>By: Anthony Peters and Matt Hyatt</footer>
-  </div>
+    <body class = "container">
+        <nav></nav>
+
+        <main>
+            <div class='title'>
+                <p>
+                    HOME <br><br>
+                    Welcome to our current holdings.
+                    Below you will see our two largest holdings. <br>
+                    Please reference the Graphs page for the rest of our holdings.
+                </p>
+            </div>
+
+            <div class="content-left">
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script> build_figure("aapl") </script>
+            </div>
+
+            <div class="content-right">
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script> build_figure("msft") </script>
+            </div>
+        </main>
+
+        <footer></footer>
+
+</body>
 </html>
