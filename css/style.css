@@ -163,6 +163,11 @@ footer {
     padding-top:var(--root-padding);
 }
 
+#map {
+    height: 800px;
+    width: 100%;
+}
+
 @media only screen and (max-width:550px){
     .container{
         grid-template-columns: 1fr;
