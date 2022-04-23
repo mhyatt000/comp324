@@ -21,14 +21,23 @@
                     GRAPH TOOLBAR:
                 </p>
                 <input type="text" value="input stock ticker">
-                <input type = "button" onclick = "generate()" value = "test button">
+                <input type="button" id="submit" onclick="myFunction()" value="Submit">
             </div>
 
             <div class="content-center">
+
                 <p style="text-align:center">
                     graphs...
                 </p>
-            </div>
+                
+                <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                <script> function myFunction(){
+                    var input = document.getElementById('submit').textContent;
+                    build_figure(input);
+                    console.log("Figure Built");
+                }
+                </script>
+
         </main>
 
         <footer></footer>
