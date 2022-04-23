@@ -35,6 +35,10 @@ function build_navbar(){
                 <li>${make_red('<a href="contact.html">Contact</a>')}</li>
                 <li>${make_red('<a href="news.html">News</a>')}</li>
             </ul>
+            <ul class="nav-links">
+                <li><input type="text" value="username"></li>
+                <li><input type="text" value="password"></li>
+            </ul>
     `
     navbar.appendChild(template.content)
 
@@ -66,6 +70,15 @@ function build_sidebars() {
 }
 
 function main(){
+
+    // const xhttp = new XMLHttpRequest();
+    // xhttp.onload = function() {
+    //   document.getElementById("demo").innerHTML = this.responseText;
+    // }
+    // xhttp.open("GET", "ajax_info.txt");
+    // xhttp.send();
+
+
 
     build_navbar()
     build_sidebars()
