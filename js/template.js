@@ -71,12 +71,13 @@ function build_sidebars() {
 
 function main(){
 
-    // const xhttp = new XMLHttpRequest();
-    // xhttp.onload = function() {
-    //   document.getElementById("demo").innerHTML = this.responseText;
-    // }
-    // xhttp.open("GET", "ajax_info.txt");
-    // xhttp.send();
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        console.log(this.responseText)
+      // document.getElementById("demo").innerHTML = this.responseText;
+    }
+    xhttp.open("GET", "ajax_temp.json");
+    xhttp.send();
 
 
 
