@@ -14,7 +14,6 @@ function make_red(anchor) {
     const linktext = String(anchor).match(re)[0].slice(1,-1).toLowerCase()
     if (page === linktext || (page === 'index' && linktext === 'home')) {
         const out = '<a style="color:red"' + anchor.slice(2,-1) + '>'
-        console.log(out)
         return out
     }
     return anchor
@@ -76,7 +75,7 @@ function main(){
         console.log(this.responseText)
       // document.getElementById("demo").innerHTML = this.responseText;
     }
-    xhttp.open("GET", "ajax_temp.json");
+    xhttp.open("GET", "docs/json/ajax_temp.json");
     xhttp.send();
 
 
