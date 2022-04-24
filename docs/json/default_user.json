@@ -1,7 +1,8 @@
 {
     "users": {
         "user" : {
-            "password":"p",
+            "username" : null
+            "password" : "p",
             "holdings" : {
             }
         },

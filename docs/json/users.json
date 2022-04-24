@@ -1,6 +1,7 @@
 {
     "users": {
         "mhyatt" : {
+            "username" : "mhyatt"
             "password":"123",
             "holdings" : {
                 "GOOGL" : {},

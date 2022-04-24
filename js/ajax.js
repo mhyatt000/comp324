@@ -15,27 +15,32 @@ function submit(){
         const username = document.getElementById("username").value
         const password = document.getElementById("password").value
 
-        function signin(xhttp){
-            let users = JSON.parse(xhttp.responseText);
-
-            let user = users.users[username]
-            if (user){
-                console.log('the user exists')
-                if (user.password == password){
-                    console.log('you can log in now')
-                }
-                else {
-                    console.log('wrong password')
-                }
-            }
-            else{
-                console.log('no user ... create?')
-            }
-        }
-
         console.log(username, password)
         ajax_read("docs/json/users.json", signin)
-        // console.log(ajax)
     }
+
+}
+
+function signin(xhttp){
+    let users = JSON.parse(xhttp.responseText);
+
+    let user = users.users[username]
+    if (user){
+        console.log('the user exists')
+        if (user.password == password){
+            console.log('you can log in now')
+        }
+        else {
+            console.log('wrong password')
+        }
+    }
+    else{
+        console.log('no user ... create?')
+    }
+}
+function log_in(user){
+
+}
+function log_out(){
 
 }
