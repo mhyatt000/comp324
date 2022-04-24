@@ -32,8 +32,8 @@ function build_navbar(){
                 <li>${make_red('<a href="index.html">Home</a>')}</li>
                 <li>${make_red('<a href="about.html">About</a>')}</li>
                 <li>${make_red('<a href="graph.html">Graph</a>')}</li>
-                <li>${make_red('<a href="contact.html">Contact</a>')}</li>
                 <li>${make_red('<a href="news.html">News</a>')}</li>
+                <li>${make_red('<a href="contact.html">Contact</a>')}</li>
             </ul>
             <ul class="nav-links">
                 <li><input type="text" value="username"></li>
