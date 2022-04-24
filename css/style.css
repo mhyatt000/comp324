@@ -128,7 +128,6 @@ nav{
     grid-area: content-left / content-left / content-left / content-right;
     border-radius:var(--root-radius);
     padding-top:var(--root-padding);
-
 }
 
 .section-header{
@@ -165,11 +164,6 @@ footer {
     color: black;
     border-radius:var(--root-radius);
     padding-top:var(--root-padding);
-}
-
-#map {
-    height: 800px;
-    width: 100%;
 }
 
 @media only screen and (max-width:550px){
