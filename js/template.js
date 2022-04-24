@@ -51,7 +51,9 @@ function build_footer() {
 
     template.innerHTML = `
         <div class="section-body">
-            By: Anthony Peters and Matt Hyatt
+            <p>
+                By: Anthony Peters and Matt Hyatt
+            </p>
         </div>
     `
     footer.appendChild(template.content)
