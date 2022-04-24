@@ -21,26 +21,17 @@
                     GRAPH TOOLBAR:
                 </p>
                 <input type="text" value="input stock ticker">
-                <input type="button" id="submit" onclick="myFunction()" value="Submit">
+                <input type="button" id="submit" onClick="div_graph()" value="Submit">
             </div>
 
-            <div class="content-center">
-
-                <p style="text-align:center">
-                    graphs...
-                </p>
-                
+            <div class = "content-left"></div>
+            <div class="content-right"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                <script> function myFunction(){
-                    var input = document.getElementById('submit').textContent;
+                <script defer> function div_graph(){
+                    var input = document.getElementById("submit").textContent;
                     build_figure(input);
-                    console.log("Figure Built");
-                }
-                </script>
-
+                 } </script>
         </main>
-
         <footer></footer>
-
 </body>
 </html>

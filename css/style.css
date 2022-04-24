@@ -123,6 +123,8 @@ nav{
 
 .content-center {
     background: lightgrey;
+    overflow: auto;
+    max-height: 800px;
     color : black;
     padding : 5px;
     grid-area: content-left / content-left / content-left / content-right;
