@@ -1,13 +1,16 @@
 {
-    "cities": [
+    "users": [
         {
-            "name":"Marseille",
-            "region":"Procence..."
+            "username":"mhyatt",
+            "password":"123",
+            "holdings" : {
+                "GOOGL" : {},
+                "NVDA" : {},
+                "GFS" : {},
+
+            }
+
         },
-        {
-            "name":"Marseille",
-            "region":"Procence..."
-        }
 
     ]
 
