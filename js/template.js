@@ -25,7 +25,9 @@ function build_navbar(){
 
     template.innerHTML = `
             <div class="heading">
-                <h2>The Web Fund</h2>
+                <h2>
+                The Web Fund
+                </h2>
             </div>
             <ul class="nav-links">
                 <li>${make_red('<a href="index.html">Home</a>')}</li>
@@ -33,11 +35,12 @@ function build_navbar(){
                 <li>${make_red('<a href="graph.html">Graph</a>')}</li>
                 <li>${make_red('<a href="news.html">News</a>')}</li>
                 <li>${make_red('<a href="contact.html">Contact</a>')}</li>
+                <li>${make_red('<a href="signin.html">SignIn</a>')}</li>
             </ul>
-            <ul class="nav-links">
+            <!-- <ul class="nav-links">
                 <li><input type="text" id="username" value="username" onKeyDown="submit()"></li>
                 <li><input type="text" id="password" value="password" onKeyDown="submit()"></li>
-            </ul>
+            </ul> -->
     `
     navbar.appendChild(template.content)
 
@@ -69,16 +72,6 @@ function build_sidebars() {
 }
 
 function main(){
-
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        console.log(this.responseText)
-      // document.getElementById("demo").innerHTML = this.responseText;
-    }
-    xhttp.open("GET", "docs/json/ajax_temp.json");
-    xhttp.send();
-
-
 
     build_navbar()
     build_sidebars()

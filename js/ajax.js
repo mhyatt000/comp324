@@ -8,7 +8,7 @@ function ajax_read(path, cfunc) {
 }
 
 
-function submit(){
+function enter_key(){
 
     if(event.keyCode == 13) {
 
@@ -21,22 +21,26 @@ function submit(){
 
 }
 
-function signin(xhttp){
+function signin(){
+    ajax_read("docs/json/users.json", _signin)
+}
+function _signin(xhttp){
+    const username = document.getElementById("username").value
+    const password = document.getElementById("password").value
+
     let users = JSON.parse(xhttp.responseText);
 
     let user = users.users[username]
     if (user){
-        console.log('the user exists')
         if (user.password == password){
             console.log('you can log in now')
         }
         else {
             console.log('wrong password')
+            console.log('highlight password field red')
         }
     }
-    else{
-        console.log('no user ... create?')
-    }
+    else { return }
 }
 function log_in(user){
 

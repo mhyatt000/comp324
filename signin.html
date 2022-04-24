@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>COMP 324 Final Project</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Stock Analysis Website">
+        <meta name="author" content="Matt Hyatt, Anthony Peters">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script defer src="js/template.js" onload="main()"></script>
+        <script defer src="js/ajax.js" onload=""></script>
+
+        <script type="text/javascript" src="js/ticker.js"></script>
+    </head>
+
+    <body class = "container">
+        <nav></nav>
+
+        <main>
+            <div class='desc' >
+
+                <div>
+                    <input type="text" id="username" value="username" onKeyDown="submit()">
+                    <input type="text" id="password" value="password" onKeyDown="submit()">
+                </div>
+                <div>
+                    <input type="button" id="signin" value="sign in" onKeyDown="submit()">
+                    <input type="button" id="signup" value="sign up" onKeyDown="submit()">
+                </div>
+
+            </div>
+
+            <div class="content-center">
+            </div>
+        </main>
+
+        <footer></footer>
+    </body>
+</html>
