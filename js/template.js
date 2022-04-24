@@ -50,7 +50,7 @@ function build_footer() {
 
     template.innerHTML = `
         <div class="section-body">
-            By: Anthony Peters and Matt Hyatt
+            2022 <br> By: Anthony Peters and Matt Hyatt <br><br>
         </div>
     `
     footer.appendChild(template.content)
