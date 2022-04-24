@@ -2,7 +2,7 @@ function build_figure(ticker) {
     new TradingView.widget(
         {
         "autosize": true,
-        "symbol": `NASDAQ:${ticker}`,
+        "symbol": `${ticker}`,
         "interval": "D",
         "timezone": "CDT/UTC",
         "theme": "dark",
