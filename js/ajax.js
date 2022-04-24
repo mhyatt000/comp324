@@ -1,11 +1,41 @@
-function ajax_read(){
+function ajax_read(path, cfunc) {
+    // inspired from https://www.w3schools.com/js/js_ajax_http.asp
 
     const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        console.log(this.responseText)
-      // document.getElementById("demo").innerHTML = this.responseText;
-    }
-    xhttp.open("GET", "docs/json/ajax_temp.json");
+    xhttp.onload = function() {cfunc(this);}
+    xhttp.open("GET", path);
     xhttp.send();
+}
+
+
+function submit(){
+
+    if(event.keyCode == 13) {
+
+        const username = document.getElementById("username").value
+        const password = document.getElementById("password").value
+
+        function signin(xhttp){
+            let users = JSON.parse(xhttp.responseText);
+
+            let user = users.users[username]
+            if (user){
+                console.log('the user exists')
+                if (user.password == password){
+                    console.log('you can log in now')
+                }
+                else {
+                    console.log('wrong password')
+                }
+            }
+            else{
+                console.log('no user ... create?')
+            }
+        }
+
+        console.log(username, password)
+        ajax_read("docs/json/users.json", signin)
+        // console.log(ajax)
+    }
 
 }

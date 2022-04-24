@@ -35,8 +35,8 @@ function build_navbar(){
                 <li>${make_red('<a href="contact.html">Contact</a>')}</li>
             </ul>
             <ul class="nav-links">
-                <li><input type="text" value="username"></li>
-                <li><input type="text" value="password"></li>
+                <li><input type="text" id="username" value="username" onKeyDown="submit()"></li>
+                <li><input type="text" id="password" value="password" onKeyDown="submit()"></li>
             </ul>
     `
     navbar.appendChild(template.content)
