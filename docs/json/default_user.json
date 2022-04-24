@@ -1,0 +1,11 @@
+{
+    "users": {
+        "user" : {
+            "password":"p",
+            "holdings" : {
+            }
+        },
+
+    }
+
+}

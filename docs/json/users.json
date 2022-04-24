@@ -1,0 +1,12 @@
+{
+    "users": {
+        "mhyatt" : {
+            "password":"123",
+            "holdings" : {
+                "GOOGL" : {},
+                "NVDA" : {},
+                "GFS" : {}
+            }
+        }
+    }
+}
