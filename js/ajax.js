@@ -33,8 +33,8 @@ function signin(){
     ajax_read("docs/json/users.json", _signin)
 }
 function _signin(xhttp){
-    const field_user = document.getElementById("username")
-    const field_pass = document.getElementById("password")
+    let field_user = document.getElementById("username")
+    let field_pass = document.getElementById("password")
 
     const username = field_user.value
     const password = field_pass.value
@@ -52,12 +52,13 @@ function _signin(xhttp){
             ajax_write('docs/json/web_state.json', `{"current_user" : ${user}}`)
 
         } else {
-            field_pass.setAttribute("value","wrong password")
+            field_pass.value = "wrong password"
             field_pass.setAttribute("style","background:#c66")
+            field_user.setAttribute("style","")
 
         }
     } else {
-        field_user.setAttribute("value","invalid user")
+        field_user.value = "invalid user"
         field_user.setAttribute("style","background:#c66")
         console.log('invalid user')
     }
