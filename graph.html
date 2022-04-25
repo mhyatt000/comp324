@@ -20,16 +20,14 @@
                 <p>
                     GRAPH TOOLBAR:
                 </p>
-                <input type="text" value="input stock ticker">
-                <input type="button" id="submit" onClick="div_graph(this.textContent)" value="Submit">
+                <input type="text" id="input" value="input stock ticker">
+                <input type="button" id="submit" onClick="var input = document.getElementById('input').value; div_graph(input);" value="Submit">
             </div>
 
             <div class = "content-left"></div>
             <div id="graph" class="content-right"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-                <script defer> function div_graph(ticker){
-                    console.log(ticker)
-
+                <script> function div_graph(ticker){
                     new TradingView.widget({
                         "autosize": true,
                         "symbol": `${ticker}`,
@@ -41,9 +39,8 @@
                         "toolbar_bg": "#f1f3f6",
                         "enable_publishing": false,
                         "container_id": "graph"
-                    })
-
-                 } </script>
+                    })} 
+                    </script>
         </main>
         <footer></footer>
 </body>
