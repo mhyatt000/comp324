@@ -1,5 +1,4 @@
 
-
 function ajax_read(path, cfunc) {
     // inspired from https://www.w3schools.com/js/js_ajax_http.asp
     const xhttp = new XMLHttpRequest();
@@ -41,21 +40,50 @@ function _signin(xhttp){
     const password = field_pass.value
 
     let users = JSON.parse(xhttp.responseText);
-
     let user = users.users[username]
+
     if (user){
         if (user.password == password){
+
+            ajax_write('docs/json/web_state.json', `{"current_user" : ${user}}`)
+
             console.log('you can log in now')
             field_pass.setAttribute("style","")
-        }
-        else {
+        } else {
             field_pass.setAttribute("value","wrong password")
             field_pass.setAttribute("style","background:#c66")
 
         }
-    }
-    else { console.log('invalid user') }
+    } else { console.log('invalid user') }
 }
+function signout(){
+
+}
+
+function signup(){
+    ajax_read("docs/json/users.json", _signup)
+}
+function _signup(){
+    const field_user = document.getElementById("username")
+    const field_pass = document.getElementById("password")
+
+    const username = field_user.value
+    const password = field_pass.value
+
+    let users = JSON.parse(xhttp.responseText);
+    let user = users.users[username]
+
+    if (user){
+        console.log('user already exists')
+    } else {
+
+    }
+
+
+}
+
+
+
 function log_in(user){
 
 }
