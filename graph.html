@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/style.css">
 
         <script defer src="js/template.js" onload="main()"></script>
+        <script defer src="js/ajax.js" onload="listen()"></script>
         <script type="text/javascript" src="js/ticker.js"></script>
     </head>
 
@@ -20,7 +21,7 @@
                 <p>
                     GRAPH TOOLBAR:
                 </p>
-                <input type="text" id="input" value="input stock ticker">
+                <input type="text" id="input" value="input stock ticker" defaultValue="input stock ticker">
                 <input type="button" id="submit" onClick="var input = document.getElementById('input').value; div_graph(input);" value="Submit">
             </div>
 
@@ -39,7 +40,7 @@
                         "toolbar_bg": "#f1f3f6",
                         "enable_publishing": false,
                         "container_id": "graph"
-                    })} 
+                    })}
                     </script>
         </main>
         <footer></footer>
