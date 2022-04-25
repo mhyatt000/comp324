@@ -45,16 +45,22 @@ function _signin(xhttp){
     if (user){
         if (user.password == password){
 
+            console.log('you can log in now')
+            field_user.setAttribute("style","background:#6c6")
+            field_pass.setAttribute("style","background:#6c6")
+
             ajax_write('docs/json/web_state.json', `{"current_user" : ${user}}`)
 
-            console.log('you can log in now')
-            field_pass.setAttribute("style","")
         } else {
             field_pass.setAttribute("value","wrong password")
             field_pass.setAttribute("style","background:#c66")
 
         }
-    } else { console.log('invalid user') }
+    } else {
+        field_user.setAttribute("value","invalid user")
+        field_user.setAttribute("style","background:#c66")
+        console.log('invalid user')
+    }
 }
 function signout(){
 
