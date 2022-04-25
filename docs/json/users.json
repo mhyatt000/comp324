@@ -1,13 +1,13 @@
 {
-    "users": {
-        "mhyatt" : {
-            "username" : "mhyatt"
-            "password":"123",
-            "holdings" : {
-                "GOOGL" : {},
-                "NVDA" : {},
-                "GFS" : {}
-            }
-        }
-    }
+	"users": {
+		"mhyatt": {
+			"username": "mhyatt",
+			"password": "123",
+			"holdings": {
+				"GOOGL": {},
+				"NVDA": {},
+				"GFS": {}
+			}
+		}
+	}
 }

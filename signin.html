@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/style.css">
 
         <script defer src="js/template.js" onload="main()"></script>
-        <script defer src="js/ajax.js" onload=""></script>
+        <script defer src="js/ajax.js" onload="listen()"></script>
 
         <script type="text/javascript" src="js/ticker.js"></script>
     </head>
@@ -21,12 +21,12 @@
             <div class='desc' >
 
                 <div>
-                    <input type="text" id="username" value="username" onKeyDown="submit()">
-                    <input type="text" id="password" value="password" onKeyDown="submit()">
+                    <input type="text" id="username" value="username" defaultValue="username">
+                    <input type="text" id="password" value="password" defaultValue="password">
                 </div>
                 <div>
-                    <input type="button" id="signin" value="sign in" onKeyDown="submit()">
-                    <input type="button" id="signup" value="sign up" onKeyDown="submit()">
+                    <input type="button" id="signin" value="sign in" onClick="signin()">
+                    <input type="button" id="signup" value="sign up" onClick="signup()">
                 </div>
 
             </div>
