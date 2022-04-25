@@ -4,9 +4,9 @@
 			"username": "mhyatt",
 			"password": "123",
 			"holdings": {
-				"GOOGL": {},
-				"NVDA": {},
-				"GFS": {}
+				"GOOGL": {"shares": 100},
+				"NVDA": {"shares": 100},
+				"GFS": {"shares": 100}
 			}
 		}
 	}
