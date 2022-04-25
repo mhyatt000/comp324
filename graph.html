@@ -8,7 +8,7 @@
         <meta name="author" content="Matt Hyatt, Anthony Peters">
         <link rel="stylesheet" href="css/style.css">
 
-        <script defer src="js/template.js" onload="main()"></script>
+        <script defer src="js/template.js" onload="main(); div_graph('AAPL'); format_JSON('AAPL')"></script>
         <script defer src="js/ajax.js" onload="listen()"></script>
         <script type="text/javascript" src="js/ticker.js"></script>
     </head>
@@ -22,11 +22,10 @@
                     GRAPH TOOLBAR:
                 </p>
                 <input type="text" id="input" value="input stock ticker" defaultValue="input stock ticker">
-                <input type="button" id="submit" onClick="var input = document.getElementById('input').value; div_graph(input);" value="Submit">
+                <input type="button" id="submit" onClick="var input = document.getElementById('input').value; div_graph(input); format_JSON(input)" value="Submit">
             </div>
 
-            <div class = "content-left"></div>
-            <div id="graph" class="content-right"></div>
+            <div id="graph" class="content-center"></div>
                 <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
                 <script> function div_graph(ticker){
                     new TradingView.widget({
@@ -39,9 +38,13 @@
                         "locale": "en",
                         "toolbar_bg": "#f1f3f6",
                         "enable_publishing": false,
-                        "container_id": "graph"
+                        "container_id": "graph",
+                        "studies": [
+                                    "StochasticRSI@tv-basicstudies"
+                                    ]
                     })}
                     </script>
+
         </main>
         <footer></footer>
 </body>
