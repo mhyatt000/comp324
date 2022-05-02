@@ -173,13 +173,80 @@
                         })
                     }).catch((error) => { show_error(error) });
             })
-            //
-            // update.addEventListener("click", (e)=>{
-            //
-            // })
-            // del.addEventListener("click", (e)=>{
-            //
-            // })
+
+            function update_holdings(mode){
+
+                const name = document.getElementById('stock-name').value.toUpperCase()
+                console.log(name)
+                const shares = document.getElementById('shares').value
+                const holdings = document.getElementById("holdings")
+                let flag = 0;
+                const ul = holdings.children[1]
+
+                for (const child of ul.children) {
+                    const stock_attr = child.innerText.split(":")
+                    if (String(stock_attr[0]) == name) {
+
+                        if (mode == "add") {
+                            const new_shares = Number(stock_attr[1]) + Number(shares)
+                        } else { // del
+                            const new_shares = Number(stock_attr[1]) - Number(shares)
+                        }
+
+                        child.innerText = `${stock_attr[0]}:${new_shares}`
+                        flag = 1;
+                    }
+                }
+                if (flag == 0) {
+                    const template = document.createElement("template")
+
+                    if (mode == "add") {
+                        template.innerHTML = `<li>${name}:${shares}</li>`
+                    } else {
+                        template.innerHTML = `<li>${name}:-${shares}</li>`
+                    }
+
+                    ul.appendChild(template.content)
+                }
+
+            }
+
+            add.addEventListener("click", (e)=>{
+
+                // add new stocks
+                update_holdings("add")
+
+                const holdings = document.getElementById("holdings")
+                const ul = holdings.children[1]
+
+                let stock_list = {}
+                for (const child of ul.children) {
+                    const stock_attr = child.innerText.split(":")
+                    stock_list[String(stock_attr[0])] = stock_attr[1]
+                }
+
+                const uid = get_data('users/current_user')
+                resolve(uid,console.log)
+
+                // write to db
+
+                function _write(uid){
+                    const query = `users/${uid}`
+
+                    update(ref(database, query), {
+                        stockList : stock_list
+                    }).then(() => {
+                        console.log(stock_list)
+                    }).catch((error) => { show_error(error) });
+
+                } // write
+
+                resolve(uid,_write)
+
+
+            })// listener
+
+            del.addEventListener("click", (e)=>{ })
 
 
 
@@ -199,11 +266,10 @@
             </div>
             <div class="content-left">
                 <h3>Stocks</h3>
-                    <input placeholder="Stock Name" id="stock-name">
-                    <input placeholder="Shares Held" id="shares">
-                    <br><br>
-                <button id="update">Add Stock/Update List</button>
-                <button id="delete">Delete Stock/Subtract Shares</button>
+                <input placeholder="Stock Name" id="stock-name">
+                <input placeholder="Shares Held" id="shares">
+                <button id="add">+</button>
+                <button id="del">-</button>
             </div>
 
             <div class="content-right" id="holdings">
