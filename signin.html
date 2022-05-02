@@ -8,7 +8,9 @@
         <meta name="author" content="Matt Hyatt, Anthony Peters">
         <link rel="stylesheet" href="css/style.css">
         <script defer src="js/template.js" onload="main()"></script>
-        <script type="module">
+        <script src="js/io.js"></script>
+        <!-- <script src="js/firebase.js"></script> -->
+        <!-- <script type="module">
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
             import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
             import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js";
@@ -22,7 +24,7 @@
               messagingSenderId: "747078392399",
               appId: "1:747078392399:web:e11fcb805b39f858ee283a"
             };
-          
+
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const auth = getAuth();
@@ -35,7 +37,7 @@
 
                 createUserWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
-                        // Signed in 
+                        // Signed in
                         const user = userCredential.user;
                         set(ref(database, 'users/' + user.uid), {
                                 email: email,
@@ -57,7 +59,7 @@
                         alert(errorMessage);
                     });
 
-                
+
             });
 
             login.addEventListener('click', (e) => {
@@ -66,7 +68,7 @@
 
                 signInWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
-                        // Signed in 
+                        // Signed in
                         const user = userCredential.user;
                         var lgDate = new Date()
 
@@ -101,7 +103,7 @@
                     });
             })
 
-          </script>
+          </script> -->
     </head>
 
     <body class = "container">
@@ -128,6 +130,6 @@
             </div>
         </main>
 
-        <footer></footer>      
+        <footer></footer>
     </body>
 </html>
