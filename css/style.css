@@ -3,6 +3,11 @@
     --root-padding:5px;
 }
 
+body {
+    background-color : #171b26
+
+}
+
 .container {
     display:grid;
     height:98vh; /* keeps annoying scroll bar out of the way */
@@ -39,7 +44,7 @@ main{
 }
 
 nav{
-    background: #484848;
+
     grid-area: nav;
     border-radius:var(--root-radius);
     padding-top:var(--root-padding);
@@ -47,7 +52,6 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     min-height: 8vh;
-    box-shadow: 0 0 100px rgba(100, 300, 5, 0.2);
 
 }
 
@@ -78,7 +82,7 @@ div {
 }
 
 .nav-links li a:hover {
-    background-color: grey;
+
 }
 
 h2{
@@ -90,7 +94,7 @@ h2{
 }
 
 .desc{
-    background: lightgrey;
+
     color: black;
     grid-area: desc;
     text-align: center;
@@ -100,21 +104,21 @@ h2{
 }
 
 .sidebar-left{
-    background: white;
+
     grid-area: sidebar-left;
     border-radius:var(--root-radius);
     padding-top:var(--root-padding);
 }
 
 .sidebar-right{
-    background: white;
+
     grid-area: sidebar-right;
     border-radius:var(--root-radius);
     padding-top:var(--root-padding);
 }
 
 .content-left{
-    background: lightgrey;
+
     color : black;
     padding : 5px;
     grid-area: content-left;
@@ -124,7 +128,7 @@ h2{
 }
 
 .content-right{
-    background: lightgrey;
+
     color : black;
     padding : 5px;
     grid-area: content-right;
@@ -134,7 +138,7 @@ h2{
 }
 
 .content-center {
-    background: lightgrey;
+
     overflow: auto;
     max-height: 800px;
     color : black;
@@ -145,7 +149,7 @@ h2{
 }
 
 .section-header{
-    background: #484848;
+
     font-size: 20px;
     color: white;
     text-align: center;
@@ -172,7 +176,7 @@ p {
 
 }
 footer {
-    background: lightgrey;
+
     text-align: center;
     grid-area: footer;
     color: black;
