@@ -43,12 +43,13 @@
                             }).then(() => {
                                 // Data saved successfully!
                                 alert('User Created Successfully');
-
+                                location.reload();
                                 })
                                 .catch((error) => {
                                 // The write failed...
                                 alert(error);
                                 });
+
                     })
                     .catch((error) => {
                         const errorCode = error.code;
@@ -75,7 +76,7 @@
                             }).then(() => {
                                 // Data saved successfully!
                                 alert('User Logged In Successfully');
-
+                                location.reload();
                                 })
                                 .catch((error) => {
                                 // The write failed...
@@ -89,11 +90,16 @@
                     });
             });
 
-            signOut(auth).then(() => {
-                // Sign-out successful.
-                }).catch((error) => {
+            logout.addEventListener("click", (e)=>{
+                signOut(auth).then(() => {
+                    // Sign-out successful.
+                    alert('Sign out Successful')
+                    location.reload();
+                    }).catch((error) => {
                     // An error happened.
-                });
+                    alert(errorMessage)
+                    });
+            })
 
           </script>
     </head>
@@ -105,9 +111,9 @@
                     <h1 style="font-size: 15px;">Login / User Registration</h6>
                     <input placeholder="Enter Email Address" id="email" type="email"/>
                     <input placeholder="Enter Password" id="password" type="password"/>
-                    <button id="register" onclick="signUp()">Sign Up</button>
-                    <button id="login" onclick="signIn()">Sign In</button>
-                    <button id="logout" onclick="signOut()">Sign Out</button>
+                    <button id="register">Sign Up</button>
+                    <button id="login">Sign In</button>
+                    <button id="logout">Sign Out</button>
             </div>
             <div class="content-center">
                 <h6>Stocks</h6>
