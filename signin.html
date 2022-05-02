@@ -22,7 +22,7 @@
               messagingSenderId: "747078392399",
               appId: "1:747078392399:web:e11fcb805b39f858ee283a"
             };
-          
+
             // Initialize Firebase
             const app = initializeApp(firebaseConfig);
             const auth = getAuth();
@@ -35,7 +35,7 @@
 
                 createUserWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
-                        // Signed in 
+                        // Signed in
                         const user = userCredential.user;
                         set(ref(database, 'users/' + user.uid), {
                                 email: email,
@@ -57,7 +57,7 @@
                         alert(errorMessage);
                     });
 
-                
+
             });
 
             login.addEventListener('click', (e) => {
@@ -66,7 +66,7 @@
 
                 signInWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
-                        // Signed in 
+                        // Signed in
                         const user = userCredential.user;
                         var lgDate = new Date()
                         update(ref(database, 'users/'), {
@@ -95,7 +95,7 @@
             logout.addEventListener("click", (e)=>{
                 signOut(auth).then(() => {
                     // Sign-out successful.
-                    update(ref(database, 'users/'), 
+                    update(ref(database, 'users/'),
                             {current_user : "null"}
                         ).then(() =>{
                             alert('Sign out Successful')
@@ -107,9 +107,24 @@
                     });
             })
 
-            update.addEventListener("click", (e)=>{
-                
+            // add and remove stocks
+            add.addEventListener("click", (e)=>{
+                const name = document.getElementById("stock-name").value
+                const shares = document.getElementById("stock-name").value
+                console.log(name)
+
+                // if user exists:
+                //     read database
+                //     for each stock in stocks:
+                //         append <li> stock </li>
+                // else :
+                //     pass
             })
+            del.addEventListener("click", (e)=>{
+
+            })
+
+            
 
           </script>
     </head>
@@ -129,18 +144,16 @@
                 <h3>Stocks</h3>
                 <input placeholder="Stock Name" id="stock-name">
                 <input placeholder="Shares Held" id="shares">
-                <br>
-                <br>
-                <button id="update">Add Stock/Update List</button>
-                <button id="delete">Delete Stock/Subtract Shares</button>
+                <button id="add">+</button>
+                <button id="del">-</button>
             </div>
 
             <div class="content-right">
                 <h3>Account and Holdings</h3>
-                
+
             </div>
         </main>
 
-        <footer></footer>      
+        <footer></footer>
     </body>
 </html>
