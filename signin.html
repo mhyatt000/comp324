@@ -11,7 +11,7 @@
         <script type="module">
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
             import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-auth.js";
-            import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js";
+            import { getDatabase, set, get, child, ref, update } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-database.js";
 
             const firebaseConfig = {
               apiKey: "AIzaSyAIColTbcgo9w8AUIKHk_2I6wZHW_ebaU0",
@@ -78,14 +78,27 @@
 
             }); // register
 
+
+            function show_stocks() {
+                // get uid
+                const uid = get_data('users/current_user')
+                const data = get_data(`users/${uid}/stockList`)
+
+                const ul = document.createElement("ul")
+                data.forEach(item => parent.appendChild(`<li>${item}</li>`))
+
+                const holdings = document.getElementById("holdings")
+                holdings.appendChild(ul)
+            }
+
             login.addEventListener('click', (e) => {
                 var email = document.getElementById('email').value;
                 var password = document.getElementById('password').value;
+
                 var signupButton = document.getElementById('register');
                 var emailInput = document.getElementById('email');
                 var passwordInput = document.getElementById('password');
                 var signInButton = document.getElementById('login');
-
 
                 signInWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
@@ -99,17 +112,18 @@
                                 last_login: lgDate,
                                 password: password
                             }).then(() => {
-                                // Data saved successfully!
+
                                 alert('User Logged In Successfully');
+                                show_stocks()
+
                                 signupButton.style.display = 'none';
                                 emailInput.style.display = 'none';
                                 passwordInput.style.display = 'none';
                                 signInButton.style.display = 'none';
-                                })
-                                .catch((error) => { show_error(error) });
+                                }).catch((error) => { show_error(error) });
                     })
                     .catch((error) => { show_error(error) });
-            });
+            }); // login
 
             logout.addEventListener("click", (e)=>{
                 signOut(auth).then(() => {
@@ -155,7 +169,7 @@
                 <button id="delete">Delete Stock/Subtract Shares</button>
             </div>
 
-            <div class="content-right">
+            <div class="content-right" id="holdings">
                 <h3>Account and Holdings</h3>
             </div>
         </main>
