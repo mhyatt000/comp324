@@ -71,6 +71,11 @@ div {
 
 }
 
+p a {
+    color : red;
+    text-decoration: none;
+}
+
 .nav-links a{
     color: white;
     text-decoration: none;
