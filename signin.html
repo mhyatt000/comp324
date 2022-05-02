@@ -99,14 +99,14 @@
             function show_stocks() {
                 // get uid
                 const uid = get_data('users/current_user')
-                resolve(uid,console.log)
+                // resolve(uid,console.log)
 
                 function _helper(uid){
                     const query = `users/${uid}/stockList`
                     return get_data(query)
                 }
                 const data = resolve(uid,_helper)
-                resolve(data,console.log)
+                // resolve(data,console.log)
 
                 function make_list(obj) {
 
@@ -114,8 +114,6 @@
                     const holdings = document.getElementById("holdings")
 
                     for (const [key, value] of Object.entries(obj)) {
-                        console.log(key)
-                        console.log(value)
 
                         const template = document.createElement("template")
                         template.innerHTML = `
