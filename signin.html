@@ -106,16 +106,28 @@
                     return get_data(query)
                 }
                 const data = resolve(uid,_helper)
-                function _test_print(str){
-                    console.log("real value is" + JSON.stringify(str))
+                resolve(data,console.log)
+
+                function make_list(obj) {
+
+                    const ul = document.createElement("ul")
+                    const holdings = document.getElementById("holdings")
+
+                    for (const [key, value] of Object.entries(obj)) {
+                        console.log(key)
+                        console.log(value)
+
+                        const template = document.createElement("template")
+                        template.innerHTML = `
+                            <li>${key} : ${value}</li>
+                        `
+
+                        ul.appendChild(template.content)
+                    }
+                    holdings.appendChild(ul)
+
                 }
-                resolve(data,_test_print)
-
-                const ul = document.createElement("ul")
-                data.forEach(item => ul.appendChild(`<li>${item}</li>`))
-
-                const holdings = document.getElementById("holdings")
-                holdings.appendChild(ul)
+                resolve(data, make_list)
             }
 
             login.addEventListener('click', (e) => {
