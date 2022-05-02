@@ -32,6 +32,7 @@
 
                 var email = document.getElementById('email').value;
                 var password = document.getElementById('password').value;
+                var stockList = {'DUMMY': 100}
 
                 createUserWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
@@ -39,7 +40,8 @@
                         const user = userCredential.user;
                         set(ref(database, 'users/' + user.uid), {
                                 email: email,
-                                password: password
+                                password: password,
+                                stockList: stockList
                             }).then(() => {
                                 // Data saved successfully!
                                 alert('User Created Successfully');
@@ -56,13 +58,17 @@
                         const errorMessage = error.message;
                         alert(errorMessage);
                     });
-
-
+                
             });
 
             login.addEventListener('click', (e) => {
                 var email = document.getElementById('email').value;
                 var password = document.getElementById('password').value;
+                var signupButton = document.getElementById('register');
+                var emailInput = document.getElementById('email');
+                var passwordInput = document.getElementById('password');
+                var signInButton = document.getElementById('login');
+
 
                 signInWithEmailAndPassword(auth, email, password)
                     .then((userCredential) => {
@@ -78,7 +84,10 @@
                             }).then(() => {
                                 // Data saved successfully!
                                 alert('User Logged In Successfully');
-                                location.reload();
+                                signupButton.style.display = 'none';
+                                emailInput.style.display = 'none';
+                                passwordInput.style.display = 'none';
+                                signInButton.style.display = 'none';
                                 })
                                 .catch((error) => {
                                 // The write failed...
@@ -107,18 +116,8 @@
                     });
             })
 
-            // add and remove stocks
-            add.addEventListener("click", (e)=>{
-                const name = document.getElementById("stock-name").value
-                const shares = document.getElementById("stock-name").value
-                console.log(name)
+            update.addEventListener("click", (e)=>{
 
-                // if user exists:
-                //     read database
-                //     for each stock in stocks:
-                //         append <li> stock </li>
-                // else :
-                //     pass
             })
             del.addEventListener("click", (e)=>{
 
@@ -142,15 +141,15 @@
             </div>
             <div class="content-left">
                 <h3>Stocks</h3>
-                <input placeholder="Stock Name" id="stock-name">
-                <input placeholder="Shares Held" id="shares">
-                <button id="add">+</button>
-                <button id="del">-</button>
+                    <input placeholder="Stock Name" id="stock-name">
+                    <input placeholder="Shares Held" id="shares">
+                    <br><br>
+                <button id="update">Add Stock/Update List</button>
+                <button id="delete">Delete Stock/Subtract Shares</button>
             </div>
 
             <div class="content-right">
                 <h3>Account and Holdings</h3>
-
             </div>
         </main>
 
