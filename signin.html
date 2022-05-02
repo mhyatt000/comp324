@@ -28,18 +28,21 @@
             const auth = getAuth();
             const database = getDatabase(app);
 
-
             function get_data(query){
+                const dbRef = ref(database)
+                let output = "";
+
                 get(child(dbRef, query)).then((snapshot) => {
                     if (snapshot.exists()) {
-                        return snapshot.val() ;
+                        output = snapshot.val() ;
                     } else {
                         console.log("No data available");
-                        return "";
+                        output = "";
                     }
                     }).catch((error) => {
                         console.error(error);
                 });
+                return output;
             }
 
             function show_error(error) {
@@ -82,7 +85,9 @@
             function show_stocks() {
                 // get uid
                 const uid = get_data('users/current_user')
+                console.log(uid);
                 const data = get_data(`users/${uid}/stockList`)
+                console.log(data);
 
                 const ul = document.createElement("ul")
                 data.forEach(item => parent.appendChild(`<li>${item}</li>`))
@@ -136,13 +141,13 @@
                         })
                     }).catch((error) => { show_error(error) });
             })
-
-            update.addEventListener("click", (e)=>{
-
-            })
-            del.addEventListener("click", (e)=>{
-
-            })
+            //
+            // update.addEventListener("click", (e)=>{
+            //
+            // })
+            // del.addEventListener("click", (e)=>{
+            //
+            // })
 
 
 
