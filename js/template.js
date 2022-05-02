@@ -24,11 +24,9 @@ function build_navbar(){
     const template = document.createElement("template")
 
     template.innerHTML = `
-            <div class="heading">
-                <h2>
+            <h2>
                 The Web Fund
-                </h2>
-            </div>
+            </h2>
             <ul class="nav-links">
                 <li>${make_red('<a href="index.html">Home</a>')}</li>
                 <li>${make_red('<a href="about.html">About</a>')}</li>

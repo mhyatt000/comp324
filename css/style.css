@@ -18,7 +18,7 @@
     font-weight: 800;
     text-transform: uppercase;
     font-size:12px;
-    color:#e3e3e3;
+    color:#898989d9;
 }
 
 main{
@@ -47,6 +47,8 @@ nav{
     justify-content: space-evenly;
     align-items: center;
     min-height: 8vh;
+    box-shadow: 0 0 100px rgba(100, 300, 5, 0.2);
+
 }
 
 div {
@@ -57,6 +59,8 @@ div {
     display: flex;
     justify-content: space-around;
     width: 15%;
+    box-shadow: 0 0 2px rgba(0,0,0,0.2);
+
 }
 
 .nav-links li{
@@ -77,11 +81,12 @@ div {
     background-color: grey;
 }
 
-.heading{
-    color:white;
+h2{
+    color:rgb(255, 255, 255);
+    text-shadow: 100px #FF0000;
     text-transform: uppercase;
-    /* letter-spacing: 5px; */
-    font-size: 20px;
+    letter-spacing: 5px;
+    font-size: 40px;
 }
 
 .desc{
