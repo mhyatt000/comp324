@@ -28,6 +28,32 @@
             const auth = getAuth();
             const database = getDatabase(app);
 
+
+            function get_data(query){
+                get(child(dbRef, query)).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        return snapshot.val() ;
+                    } else {
+                        console.log("No data available");
+                        return "";
+                    }
+                    }).catch((error) => {
+                        console.error(error);
+                });
+            }
+
+            function show_error(error) {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+            }
+
+            // test get_data()
+            const query = 'users/rWwhXguU1kVfdmcdW5S39He4tCq1/email'
+            const data = get_data(query)
+            console.log(data)
+
+
             register.addEventListener('click', (e) =>{
 
                 var email = document.getElementById('email').value;
@@ -46,20 +72,11 @@
                                 // Data saved successfully!
                                 alert('User Created Successfully');
                                 location.reload();
-                                })
-                                .catch((error) => {
-                                // The write failed...
-                                alert(error);
-                                });
+                                }).catch((error) => { show_error(error) });
 
-                    })
-                    .catch((error) => {
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        alert(errorMessage);
-                    });
-                
-            });
+                    }).catch((error) => { show_error(error) });
+
+            }); // register
 
             login.addEventListener('click', (e) => {
                 var email = document.getElementById('email').value;
@@ -89,16 +106,9 @@
                                 passwordInput.style.display = 'none';
                                 signInButton.style.display = 'none';
                                 })
-                                .catch((error) => {
-                                // The write failed...
-                                alert(error);
-                                });
+                                .catch((error) => { show_error(error) });
                     })
-                    .catch((error) => {
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        alert(errorMessage)
-                    });
+                    .catch((error) => { show_error(error) });
             });
 
             logout.addEventListener("click", (e)=>{
@@ -110,10 +120,7 @@
                             alert('Sign out Successful')
                             location.reload();
                         })
-                    }).catch((error) => {
-                    // An error happened.
-                    alert(errorMessage)
-                    });
+                    }).catch((error) => { show_error(error) });
             })
 
             update.addEventListener("click", (e)=>{
@@ -123,7 +130,7 @@
 
             })
 
-            
+
 
           </script>
     </head>
