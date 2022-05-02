@@ -115,6 +115,7 @@ h2{
 
 .content-left{
     background: lightgrey;
+    color : black;
     padding : 5px;
     grid-area: content-left;
     border-radius:var(--root-radius);
@@ -124,6 +125,7 @@ h2{
 
 .content-right{
     background: lightgrey;
+    color : black;
     padding : 5px;
     grid-area: content-right;
     border-radius:var(--root-radius);

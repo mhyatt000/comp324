@@ -69,7 +69,9 @@
                         // Signed in 
                         const user = userCredential.user;
                         var lgDate = new Date()
-
+                        update(ref(database, 'users/'), {
+                            current_user : user.uid
+                        })
                         update(ref(database, 'users/' + user.uid), {
                                 last_login: lgDate,
                                 password: password
@@ -93,12 +95,20 @@
             logout.addEventListener("click", (e)=>{
                 signOut(auth).then(() => {
                     // Sign-out successful.
-                    alert('Sign out Successful')
-                    location.reload();
+                    update(ref(database, 'users/'), 
+                            {current_user : "null"}
+                        ).then(() =>{
+                            alert('Sign out Successful')
+                            location.reload();
+                        })
                     }).catch((error) => {
                     // An error happened.
                     alert(errorMessage)
                     });
+            })
+
+            update.addEventListener("click", (e)=>{
+                
             })
 
           </script>
@@ -115,16 +125,19 @@
                     <button id="login">Sign In</button>
                     <button id="logout">Sign Out</button>
             </div>
-            <div class="content-center">
-                <h6>Stocks</h6>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+            <div class="content-left">
+                <h3>Stocks</h3>
+                <input placeholder="Stock Name" id="stock-name">
+                <input placeholder="Shares Held" id="shares">
+                <br>
+                <br>
+                <button id="update">Add Stock/Update List</button>
+                <button id="delete">Delete Stock/Subtract Shares</button>
+            </div>
 
-                </ul>
+            <div class="content-right">
+                <h3>Account and Holdings</h3>
+                
             </div>
         </main>
 
