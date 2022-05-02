@@ -32,18 +32,32 @@
                 const dbRef = ref(database)
                 let output = "";
 
-                get(child(dbRef, query)).then((snapshot) => {
+                output = get(child(dbRef, query)).then((snapshot) => {
                     if (snapshot.exists()) {
-                        output = snapshot.val() ;
+                        // console.log(snapshot.val())
+                        return snapshot.val() ;
                     } else {
                         console.log("No data available");
-                        output = "";
                     }
-                    }).catch((error) => {
-                        console.error(error);
-                });
+                    }).catch((error) => { show_error(error); });
                 return output;
-            }
+
+            } // func
+
+
+            // const b = get_data('users/giH74U7vFhaS3zcmuM0peOKXJr62/stockList')
+
+            let a = console.log
+            function resolve(promise,func){
+                const resolver = async (promise,func) => {
+                    const temp = await promise
+                    return func(temp)
+                }
+                return resolver(promise,func)
+            };
+
+            // resolve(b,a)
+
 
             function show_error(error) {
                 const errorCode = error.code;
@@ -85,12 +99,20 @@
             function show_stocks() {
                 // get uid
                 const uid = get_data('users/current_user')
-                console.log(uid);
-                const data = get_data(`users/${uid}/stockList`)
-                console.log(data);
+                resolve(uid,console.log)
+
+                function _helper(uid){
+                    const query = `users/${uid}/stockList`
+                    return get_data(query)
+                }
+                const data = resolve(uid,_helper)
+                function _test_print(str){
+                    console.log("real value is" + JSON.stringify(str))
+                }
+                resolve(data,_test_print)
 
                 const ul = document.createElement("ul")
-                data.forEach(item => parent.appendChild(`<li>${item}</li>`))
+                data.forEach(item => ul.appendChild(`<li>${item}</li>`))
 
                 const holdings = document.getElementById("holdings")
                 holdings.appendChild(ul)

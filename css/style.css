@@ -4,7 +4,9 @@
 }
 
 body {
-    background-color : #171b26;
+    /* background-color : #171b26; */
+    background-color : #393d48;
+    color : white;
 }
 
 .container {
@@ -22,7 +24,6 @@ body {
     font-weight: 800;
     text-transform: uppercase;
     font-size:12px;
-    color:#898989d9;
 }
 
 main{
@@ -39,7 +40,6 @@ main{
     font-family:"Inter", sans-serif;
     text-transform: uppercase;
     font-size:12px;
-    color:#e3e3e3;
 }
 
 nav{
@@ -85,7 +85,6 @@ div {
 }
 
 h2{
-    color:rgb(255, 255, 255);
     text-shadow: 100px #FF0000;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -94,7 +93,6 @@ h2{
 
 .desc{
 
-    color: black;
     grid-area: desc;
     text-align: center;
     font-size: 15px;
@@ -118,7 +116,6 @@ h2{
 
 .content-left{
 
-    color : black;
     padding : 5px;
     grid-area: content-left;
     border-radius:var(--root-radius);
@@ -128,7 +125,6 @@ h2{
 
 .content-right{
 
-    color : black;
     padding : 5px;
     grid-area: content-right;
     border-radius:var(--root-radius);
@@ -140,7 +136,6 @@ h2{
 
     overflow: auto;
     max-height: 800px;
-    color : black;
     padding : 5px;
     grid-area: content-left / content-left / content-left / content-right;
     border-radius:var(--root-radius);
@@ -150,7 +145,6 @@ h2{
 .section-header{
 
     font-size: 20px;
-    color: white;
     text-align: center;
     border-radius:var(--root-radius);
     padding-top:var(--root-padding);
@@ -167,7 +161,6 @@ h2{
 }
 
 p {
-    color: black;
     font-size : 15px;
     border-radius:var(--root-radius);
     padding-top:var(--root-padding);
@@ -178,7 +171,6 @@ footer {
 
     text-align: center;
     grid-area: footer;
-    color: black;
     border-radius:var(--root-radius);
     padding-top:var(--root-padding);
 }
