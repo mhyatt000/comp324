@@ -1,4 +1,3 @@
-// inspired by nicholas synovic
 
 function get_URL() {
     return window.location.href.split('/').slice(-1)
@@ -20,6 +19,8 @@ function make_red(anchor) {
 }
 
 function build_navbar(){
+    // inspired by nicholas synovic
+
     const navbar = document.getElementsByTagName("nav")[0]
     const template = document.createElement("template")
 
