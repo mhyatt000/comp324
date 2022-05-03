@@ -174,8 +174,10 @@
                     }).catch((error) => { show_error(error) });
             })
 
-            function update_holdings(mode){
 
+            add.addEventListener("click", (e)=>{
+
+                // add new stocks
                 const name = document.getElementById('stock-name').value.toUpperCase()
                 console.log(name)
                 const shares = document.getElementById('shares').value
@@ -185,39 +187,21 @@
 
                 for (const child of ul.children) {
                     const stock_attr = child.innerText.split(":")
+                    console.log(stock_attr[0])
+                    console.log(name)
                     if (String(stock_attr[0]) == name) {
 
-                        if (mode == "add") {
-                            const new_shares = Number(stock_attr[1]) + Number(shares)
-                        } else { // del
-                            const new_shares = Number(stock_attr[1]) - Number(shares)
-                        }
-
+                        const new_shares = Number(stock_attr[1]) + Number(shares)
                         child.innerText = `${stock_attr[0]}:${new_shares}`
                         flag = 1;
                     }
                 }
                 if (flag == 0) {
                     const template = document.createElement("template")
-
-                    if (mode == "add") {
-                        template.innerHTML = `<li>${name}:${shares}</li>`
-                    } else {
-                        template.innerHTML = `<li>${name}:-${shares}</li>`
-                    }
+                    template.innerHTML = `<li>${name}:${shares}</li>`
 
                     ul.appendChild(template.content)
                 }
-
-            }
-
-            add.addEventListener("click", (e)=>{
-
-                // add new stocks
-                update_holdings("add")
-
-                const holdings = document.getElementById("holdings")
-                const ul = holdings.children[1]
 
                 let stock_list = {}
                 for (const child of ul.children) {
