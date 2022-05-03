@@ -178,9 +178,9 @@
             add.addEventListener("click", (e)=>{
 
                 // add new stocks
-                const name = document.getElementById('stock-name').value.toUpperCase()
+                const name = document.getElementById('stock-name').value.toUpperCase().trim()
                 console.log(name)
-                const shares = document.getElementById('shares').value
+                const shares = document.getElementById('shares').value.trim()
                 const holdings = document.getElementById("holdings")
                 let flag = 0;
                 const ul = holdings.children[1]
@@ -189,7 +189,7 @@
                     const stock_attr = child.innerText.split(":")
                     console.log(stock_attr[0])
                     console.log(name)
-                    if (String(stock_attr[0]) == name) {
+                    if (String(stock_attr[0]).trim() == name) {
 
                         const new_shares = Number(stock_attr[1]) + Number(shares)
                         child.innerText = `${stock_attr[0]}:${new_shares}`
@@ -230,7 +230,7 @@
 
             })// listener
 
-            del.addEventListener("click", (e)=>{ })
+            // del.addEventListener("click", (e)=>{ })
 
 
 
