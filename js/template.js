@@ -24,10 +24,10 @@ function build_navbar(){
     const template = document.createElement("template")
 
     template.innerHTML = `
-            <h2>
+            <h1>
                 The Web Fund
-            </h2>
-            <ul class="nav-links">
+            </h1>
+            <ul>
                 <li>${make_red('<a href="index.html">Home</a>')}</li>
                 <li>${make_red('<a href="about.html">About</a>')}</li>
                 <li>${make_red('<a href="graph.html">Graph</a>')}</li>
@@ -35,10 +35,6 @@ function build_navbar(){
                 <li>${make_red('<a href="contact.html">Contact</a>')}</li>
                 <li>${make_red('<a href="signin.html">SignIn</a>')}</li>
             </ul>
-            <!-- <ul class="nav-links">
-                <li><input type="text" id="username" value="username" onKeyDown="submit()"></li>
-                <li><input type="text" id="password" value="password" onKeyDown="submit()"></li>
-            </ul> -->
     `
     navbar.appendChild(template.content)
 
@@ -57,22 +53,10 @@ function build_footer() {
     footer.appendChild(template.content)
 }
 
-function build_sidebars() {
-
-    const container = document.getElementsByClassName("container")[0]
-    const template = document.createElement("template")
-
-    template.innerHTML = `
-        <div class="sidebar-left"></div>
-        <div class="sidebar-right"></div>
-    `
-    container.appendChild(template.content)
-}
 
 function main(){
 
     build_navbar()
-    build_sidebars()
     build_footer()
 
 }

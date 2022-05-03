@@ -2,15 +2,90 @@
 
 
 :root{
-    --root-radius:5px;
-    --root-padding:5px;
+    --padding : 5px;
+    --margin : 5px;
 }
 
 body {
     /* background-color : #171b26; */
     background-color : #393d48;
     color : white;
+    margin : var(--margin);
 }
+
+img {
+    height : 200px;
+}
+
+button {
+    margin: var(--margin);
+}
+
+/* text tags */
+
+h1, h2, h3, p, li{
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+h1, h2, h3 {
+}
+
+h1 {
+    font-size : 40px;
+    letter-spacing: 5px;
+}
+
+h2 {
+    font-size : 30px;
+}
+
+h3, p{
+    font-size : 15px;
+}
+
+p a {
+    color : red;
+    text-decoration: none;
+}
+
+/* nav bar */
+
+nav {
+    grid-area: nav;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    min-height: 8vh;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+}
+
+li a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 12px 8px;
+}
+
+li a:hover {
+
+}
+
+/* main */
 
 .container {
     display:grid;
@@ -18,15 +93,14 @@ body {
     grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
     grid-template-rows: 0.4fr 1.5fr 1.5fr 0.1fr;
     grid-template-areas:
-        "sidebar-left nav nav sidebar-right"
-        "sidebar-left main main sidebar-right"
-        "sidebar-left main main sidebar-right"
-        "sidebar-left footer footer sidebar-right";
+        ". nav nav ."
+        ". main main ."
+        ". main main ."
+        ". footer footer .";
+
     grid-gap:0.2rem;
     font-family:"Inter", sans-serif;
     font-weight: 800;
-    text-transform: uppercase;
-    font-size:12px;
 }
 
 main{
@@ -41,159 +115,44 @@ main{
 
     grid-gap:0.2rem;
     font-family:"Inter", sans-serif;
-    text-transform: uppercase;
-    font-size:12px;
 }
 
-nav{
 
-    grid-area: nav;
-
-    padding-top:var(--root-padding);
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    min-height: 8vh;
-
-}
 
 div {
-    padding : 5px 5px;
+    padding : 5px;
 }
 
-.nav-links{
-    display: flex;
-    justify-content: space-around;
-    width: 15%;
-    box-shadow: 0 0 2px rgba(0,0,0,0.2);
-
-}
-
-.nav-links li{
-    list-style: none;
-
-}
-
-p a {
-    color : red;
-    text-decoration: none;
-}
-
-.nav-links a{
-    color: white;
-    text-decoration: none;
-    letter-spacing: 3px;
-    font-weight: bold;
-    font-size: 12px;
-    padding: 12px 8px;
-}
-
-.nav-links li a:hover {
-
-}
-
-h2{
-    text-shadow: 100px #FF0000;
-    text-transform: uppercase;
-    letter-spacing: 5px;
-    font-size: 40px;
-}
 
 .desc{
-
     grid-area: desc;
     text-align: center;
-    font-size: 15px;
-
-    padding-top:var(--root-padding);
 }
 
-.sidebar-left{
-
-    grid-area: sidebar-left;
-
-    padding-top:var(--root-padding);
-}
-
-.sidebar-right{
-
-    grid-area: sidebar-right;
-
-    padding-top:var(--root-padding);
-}
-
-.content-left{
-
-    padding : 5px;
-    grid-area: content-left;
-
-    padding-top:var(--root-padding);
-
-}
-
-.content-right{
-
-    padding : 5px;
-    grid-area: content-right;
-
-    padding-top:var(--root-padding);
-
-}
+.content-left{ grid-area: content-left; }
+.content-right{ grid-area: content-right; }
 
 .content-center {
-
     overflow: auto;
     max-height: 800px;
     padding : 5px;
     grid-area: content-left / content-left / content-left / content-right;
-
-    padding-top:var(--root-padding);
 }
 
 .section-header{
-
     font-size: 20px;
     text-align: center;
 
-    padding-top:var(--root-padding);
     margin : 5px;
 }
 
 
 .section-body{
-
-    padding-top:var(--root-padding);
     margin : 5px;
     align-items: center;
-
 }
 
-p {
-    font-size : 15px;
-
-    padding-top:var(--root-padding);
-    text-align: center;
-
-}
 footer {
-
     text-align: center;
     grid-area: footer;
-
-    padding-top:var(--root-padding);
-}
-
-@media only screen and (max-width:550px){
-    .container{
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.2fr 0.2fr 1fr 1.5fr 1.5fr 0.2fr 0.5fr;
-        grid-template-areas:
-        "nav"
-        "sidebar-left"
-        "desc"
-        "graph1"
-        "graph2"
-        "sidebar-right"
-        "footer";
-    }
 }
