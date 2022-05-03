@@ -117,7 +117,7 @@
 
                         const template = document.createElement("template")
                         template.innerHTML = `
-                            <li>${key} : ${value}</li>
+                            <li>${key}:${value}</li>
                         `
 
                         ul.appendChild(template.content)
@@ -231,7 +231,60 @@
 
             })// listener
 
-            // del.addEventListener("click", (e)=>{ })
+            del.addEventListener("click", (e)=>{
+
+                // add new stocks
+                const name = document.getElementById('stock-name').value.toUpperCase().trim()
+                console.log(name)
+                const shares = document.getElementById('shares').value.trim()
+                const holdings = document.getElementById("holdings")
+                let flag = 0;
+                const ul = holdings.children[1]
+
+                for (const child of ul.children) {
+                    const stock_attr = child.innerText.split(":")
+                    console.log(stock_attr[0])
+                    console.log(name)
+                    if (String(stock_attr[0]).trim() == name) {
+
+                        const new_shares = Number(stock_attr[1]) - Number(shares)
+                        child.innerText = `${stock_attr[0]}:${new_shares}`
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 0) {
+                    const template = document.createElement("template")
+                    template.innerHTML = `<li>${name}:${-shares}</li>`
+
+                    ul.appendChild(template.content)
+                }
+
+                let stock_list = {}
+                for (const child of ul.children) {
+                    const stock_attr = child.innerText.split(":")
+                    stock_list[String(stock_attr[0])] = stock_attr[1]
+                }
+
+                const uid = get_data('users/current_user')
+                resolve(uid,console.log)
+
+                // write to db
+
+                function _write(uid){
+                    const query = `users/${uid}`
+
+                    update(ref(database, query), {
+                        stockList : stock_list
+                    }).then(() => {
+                        console.log(stock_list)
+                    }).catch((error) => { show_error(error) });
+
+                } // write
+
+                resolve(uid,_write)
+
+            })
 
 
 
