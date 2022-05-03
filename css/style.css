@@ -11,6 +11,13 @@ body {
     background-color : #393d48;
     color : white;
     margin : var(--margin);
+
+    font-family:"Inter", sans-serif;
+    font-weight: 800;
+}
+
+div {
+    padding : 5px;
 }
 
 img {
@@ -88,8 +95,9 @@ li a:hover {
 /* main */
 
 .container {
-    display:grid;
     height:98vh; /* keeps annoying scroll bar out of the way */
+
+    display:grid;
     grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
     grid-template-rows: 0.4fr 1.5fr 1.5fr 0.1fr;
     grid-template-areas:
@@ -99,13 +107,12 @@ li a:hover {
         ". footer footer .";
 
     grid-gap:0.2rem;
-    font-family:"Inter", sans-serif;
-    font-weight: 800;
 }
 
 main{
-    display: grid;
     grid-area: main;
+
+    display: grid;
     grid-template-columns:  1fr 1fr ;
     grid-template-rows:  .15fr 1.5fr;
 
@@ -114,15 +121,7 @@ main{
         "content-left content-right";
 
     grid-gap:0.2rem;
-    font-family:"Inter", sans-serif;
 }
-
-
-
-div {
-    padding : 5px;
-}
-
 
 .desc{
     grid-area: desc;
@@ -134,25 +133,10 @@ div {
 
 .content-center {
     overflow: auto;
-    max-height: 800px;
-    padding : 5px;
     grid-area: content-left / content-left / content-left / content-right;
 }
 
-.section-header{
-    font-size: 20px;
-    text-align: center;
-
-    margin : 5px;
-}
-
-
-.section-body{
-    margin : 5px;
-    align-items: center;
-}
-
 footer {
-    text-align: center;
     grid-area: footer;
+    text-align: center;
 }
