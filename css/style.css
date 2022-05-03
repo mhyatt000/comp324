@@ -1,3 +1,6 @@
+::-webkit-scrollbar { display: none; }
+
+
 :root{
     --root-radius:5px;
     --root-padding:5px;
@@ -45,7 +48,7 @@ main{
 nav{
 
     grid-area: nav;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
     display: flex;
     justify-content: space-evenly;
@@ -101,21 +104,21 @@ h2{
     grid-area: desc;
     text-align: center;
     font-size: 15px;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
 }
 
 .sidebar-left{
 
     grid-area: sidebar-left;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
 }
 
 .sidebar-right{
 
     grid-area: sidebar-right;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
 }
 
@@ -123,7 +126,7 @@ h2{
 
     padding : 5px;
     grid-area: content-left;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
 
 }
@@ -132,7 +135,7 @@ h2{
 
     padding : 5px;
     grid-area: content-right;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
 
 }
@@ -143,7 +146,7 @@ h2{
     max-height: 800px;
     padding : 5px;
     grid-area: content-left / content-left / content-left / content-right;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
 }
 
@@ -151,14 +154,14 @@ h2{
 
     font-size: 20px;
     text-align: center;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
     margin : 5px;
 }
 
 
 .section-body{
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
     margin : 5px;
     align-items: center;
@@ -167,7 +170,7 @@ h2{
 
 p {
     font-size : 15px;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
     text-align: center;
 
@@ -176,7 +179,7 @@ footer {
 
     text-align: center;
     grid-area: footer;
-    border-radius:var(--root-radius);
+
     padding-top:var(--root-padding);
 }
 

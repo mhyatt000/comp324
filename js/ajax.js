@@ -1,6 +1,6 @@
 
 function ajax_read(path, cfunc) {
-    // inspired from https://www.w3schools.com/js/js_ajax_http.asp
+
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {cfunc(this);}
     xhttp.open("GET", path);
@@ -8,6 +8,7 @@ function ajax_read(path, cfunc) {
 }
 
 function ajax_write(path, str) {
+    
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {console.log(this.responseText);}
     xhttp.open("POST", path, true);
