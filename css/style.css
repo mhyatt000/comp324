@@ -99,14 +99,36 @@ li a:hover {
 
     display:grid;
     grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
-    grid-template-rows: 0.4fr 1.5fr 1.5fr 0.1fr;
+    grid-template-rows: 0.4fr 3fr 0.1fr;
     grid-template-areas:
         ". nav nav ."
-        ". main main ."
         ". main main ."
         ". footer footer .";
 
     grid-gap:0.2rem;
+}
+
+.row {
+    height : 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-row : 1;
+
+}
+.col {
+    width : 100%;
+    display : grid;
+    grid-auto-flow: row;
+    grid-column : 1;
+}
+
+.row , .col {
+    /* grids and flex boxes are spaced evenly by default */
+
+    justify-content : space-evenly;
+    justify-items : center;
+    align-content : space-evenly;
+    align-items: center;
 }
 
 main{
